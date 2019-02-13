@@ -45,23 +45,23 @@ public class InitialiseHandler implements ActionHandler {
             if (options.has(CONFIG)) {
                 JSONObject config = options.getJSONObject(CONFIG);
                 FirebaseOptions.Builder configBuilder = new FirebaseOptions.Builder();
-                if (options.has("applicationId")) {
-                    configBuilder.setApplicationId("applicationId");
+                if (config.has("applicationId")) {
+                    configBuilder.setApplicationId(config.getString("applicationId"));
                 }
-                if (options.has("gcmSenderId")) {
-                    configBuilder.setGcmSenderId("gcmSenderId");
+                if (config.has("gcmSenderId")) {
+                    configBuilder.setGcmSenderId(config.getString("gcmSenderId"));
                 }
-                if (options.has("apiKey")) {
-                    configBuilder.setApiKey("apiKey");
+                if (config.has("apiKey")) {
+                    configBuilder.setApiKey(config.getString("apiKey"));
                 }
-                if (options.has("projectId")) {
-                    configBuilder.setProjectId("projectId");
+                if (config.has("projectId")) {
+                    configBuilder.setProjectId(config.getString("projectId"));
                 }
-                if (options.has("databaseUrl")) {
-                    configBuilder.setDatabaseUrl("databaseUrl");
+                if (config.has("databaseUrl")) {
+                    configBuilder.setDatabaseUrl(config.getString("databaseUrl"));
                 }
-                if (options.has("storageBucket")) {
-                    configBuilder.setStorageBucket("storageBucket");
+                if (config.has("storageBucket")) {
+                    configBuilder.setStorageBucket(config.getString("storageBucket"));
                 }
 
                 FirebaseOptions customOptions = configBuilder.build();
