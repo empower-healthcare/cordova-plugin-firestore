@@ -263,9 +263,9 @@
     asl_log(NULL, NULL, ASL_LEVEL_DEBUG, "Initialising Firestore...");
 
     if (config != nil && [config objectForKey:@"googleAppId"]) {
-        FIROptions *customOptions = [[FIROptions alloc] initWithGoogleAppID:config[@"googleAppID"] GCMSenderID:config[@"gcmSenderID"]];
-        if ([config objectForKey:@"bundleID"]) {
-          customOptions.bundleID = config[@"bundleID"];
+        FIROptions *customOptions = [[FIROptions alloc] initWithGoogleAppID:config[@"googleAppId"] GCMSenderID:config[@"gcmSenderId"]];
+        if ([config objectForKey:@"bundleId"]) {
+          customOptions.bundleID = config[@"bundleId"];
         }
         if ([config objectForKey:@"apiKey"]) {
           customOptions.APIKey = config[@"apiKey"];
